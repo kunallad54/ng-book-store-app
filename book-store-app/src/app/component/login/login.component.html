@@ -1,0 +1,40 @@
+<body>
+    <div class="form-content">
+        <div class="body-content">
+            <p>Welcome to Online Bookstore</p>
+        </div>
+        <form class="form">
+            <div class="form-head">
+               <p>Login</p> 
+            </div>
+            <div class="row-content">
+                <mat-label class="label text" for="Email">Email</mat-label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input id="email" class="input" matInput placeholder="Enter Your Email" required>
+                </mat-form-field>
+            </div>
+            <div class="row-content">
+                <mat-label class="label text" for="password">Password</mat-label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input id="password" type="password" class="input" matInput placeholder="Enter Your Password"
+                        required>
+                </mat-form-field>
+            </div>
+            <div class="buttonParent">
+                <div class="login">
+                    <button mat-raised-button color="accent" type="submit" class="loginButton"
+                        id="loginButton">
+                        <span class="state">Log in</span>
+                    </button>
+                    <a routerLink="/register">
+                    <button mat-raised-button color="accent" type="submit" class="loginButton"
+                        id="createButton">
+                        <span class="state">Create Your Account</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+            <span class="psw"><a href="#">Forgot Your password?</a></span>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,57 @@
+<body>
+    <div class="form-content">
+        <div class="body-content">
+            <p>Bookstore Registration Form</p>
+        </div>
+        <form class="form" action="">
+            <div class="form-head">
+                Create Your Book Store Account
+            </div>
+            <div class="row-content">
+                <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
+                <mat-form-field class="left-inputs" appearance="outline">
+                    <input id="firstName" class="input" matInput placeholder="First Name *" required>
+                </mat-form-field>
+                <!-- <mat-label class="label text" for="LastName">Last Name</mat-label> -->
+                <mat-form-field class="right-inputs" appearance="outline">
+                    <input id="lastName" class="lastname-input" matInput placeholder="Last Name *" required>
+                </mat-form-field>
+            </div>
+            <div class="row-content">
+                <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
+                <mat-form-field class="left-inputs" appearance="outline">
+                    <input id="mobileNumber" class="input" matInput placeholder="Mobile Number *" required>
+                </mat-form-field>
+                <mat-form-field class="right-inputs" appearance="outline">
+                    <input id="kyc" class="kyc-input" matInput placeholder="KYC Number *" required>
+                </mat-form-field>
+            </div>
+            <div class="row-content">
+                <mat-form-field class="date-input" appearance="outline">
+                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth *">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="row-content">
+                <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
+                <mat-form-field class="left-inputs" appearance="outline">
+                    <input id="email" class="input" matInput placeholder="Email *" required>
+                </mat-form-field>
+                <mat-form-field class="right-inputs" appearance="outline">
+                    <input id="password" type="password" matInput placeholder="Password *" required>
+                </mat-form-field>
+            </div>
+            <div class="buttonParent">
+                <a routerLink="/login">
+                    <button mat-raised-button color="accent" class="button cancelButton">Cancel</button>
+                </a>
+                <div class="submit-reset">
+                    <button mat-raised-button color="accent" type="submit" class="button submitButton"
+                        id="submitButton">Register</button>
+                    <button mat-raised-button color="accent" type="reset" class="resetButton button">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
