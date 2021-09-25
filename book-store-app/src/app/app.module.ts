@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { HeaderComponent } from './component/header/header.component';
+import { UserVerficationComponent } from './component/user-verfication/user-verfication.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserVerficationComponent
   ],
   imports: [
     BrowserModule,

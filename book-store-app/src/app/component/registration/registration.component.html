@@ -3,43 +3,60 @@
         <div class="body-content">
             <p>Bookstore Registration Form</p>
         </div>
-        <form class="form" action="">
+        <form class="form" [formGroup]="userFormGroup" action="#" (ngSubmit)="onSubmit()" type="search" autocomplete="off">
             <div class="form-head">
                 Create Your Book Store Account
             </div>
             <div class="row-content">
                 <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
                 <mat-form-field class="left-inputs" appearance="outline">
-                    <input id="firstName" class="input" matInput placeholder="First Name *" required>
+                    <input id="firstName" class="input" matInput placeholder="First Name *" ngDefaultControl formControlName="firstName" 
+                    type="search" autocomplete="off" required>
+                    <mat-error *ngIf="checkError('firstName', 'required')">First Name is required</mat-error>
+                    <mat-error *ngIf="checkError('firstName', 'pattern')">Please Enter Valid Name</mat-error>
                 </mat-form-field>
                 <!-- <mat-label class="label text" for="LastName">Last Name</mat-label> -->
                 <mat-form-field class="right-inputs" appearance="outline">
-                    <input id="lastName" class="lastname-input" matInput placeholder="Last Name *" required>
+                    <input id="lastName" class="lastname-input" matInput placeholder="Last Name *" ngDefaultControl formControlName="lastName"
+                    type="search" autocomplete="off" required>
+                    <mat-error *ngIf="checkError('lastName', 'required')">Last Name is required</mat-error>
+                    <mat-error *ngIf="checkError('lastName', 'pattern')">Please Enter Valid Name</mat-error>
                 </mat-form-field>
             </div>
             <div class="row-content">
                 <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
                 <mat-form-field class="left-inputs" appearance="outline">
-                    <input id="mobileNumber" class="input" matInput placeholder="Mobile Number *" required>
+                    <input id="mobileNumber" class="input" matInput placeholder="Mobile Number *" ngDefaultControl formControlName="phoneNumber"
+                    type="search" autocomplete="off" required>
+                    <mat-error *ngIf="checkError('phoneNumber', 'required')">Phone Number is required</mat-error>
+                    <mat-error *ngIf="checkError('phoneNumber', 'pattern')">Please Enter Valid Mobile Number</mat-error>
                 </mat-form-field>
                 <mat-form-field class="right-inputs" appearance="outline">
-                    <input id="kyc" class="kyc-input" matInput placeholder="KYC Number *" required>
+                    <input id="kyc" class="kyc-input" matInput placeholder="KYC Number *" ngDefaultControl formControlName="kyc"
+                    type="search" autocomplete="off" required>
+                    <mat-error *ngIf="checkError('kyc', 'required')">KYC is required</mat-error>
+                    <mat-error *ngIf="checkError('kyc', 'pattern')">Please Enter Valid KYC Number</mat-error>
                 </mat-form-field>
             </div>
             <div class="row-content">
                 <mat-form-field class="date-input" appearance="outline">
-                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth *">
+                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth *" ngDefaultControl formControlName="dateOfBirth" 
+                    required>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="checkError('dateOfBirth', 'required')">Date of Birth is required</mat-error>
                 </mat-form-field>
             </div>
             <div class="row-content">
                 <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
                 <mat-form-field class="left-inputs" appearance="outline">
-                    <input id="email" class="input" matInput placeholder="Email *" required>
+                    <input id="email" class="input" matInput placeholder="Email *" ngDefaultControl formControlName="emailId"
+                    type="search" autocomplete="off" required>
+                    <mat-error *ngIf="checkError('emailId', 'required')">Email ID is required</mat-error>
                 </mat-form-field>
                 <mat-form-field class="right-inputs" appearance="outline">
-                    <input id="password" type="password" matInput placeholder="Password *" required>
+                    <input id="password" type="password" matInput placeholder="Password *" ngDefaultControl formControlName="password" required>
+                    <mat-error *ngIf="checkError('password', 'required')">Password is required</mat-error>
                 </mat-form-field>
             </div>
             <div class="buttonParent">

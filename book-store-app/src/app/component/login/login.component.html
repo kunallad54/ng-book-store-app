@@ -5,7 +5,7 @@
         </div>
         <form class="form">
             <div class="form-head">
-               <p>Login</p> 
+                <p>Login</p>
             </div>
             <div class="row-content">
                 <mat-label class="label text" for="Email">Email</mat-label>
@@ -22,19 +22,22 @@
             </div>
             <div class="buttonParent">
                 <div class="login">
-                    <button mat-raised-button color="accent" type="submit" class="loginButton"
-                        id="loginButton">
+                    <button mat-raised-button color="accent" type="submit" class="loginButton" id="loginButton">
                         <span class="state">Log in</span>
                     </button>
                     <a routerLink="/register">
-                    <button mat-raised-button color="accent" type="submit" class="loginButton"
-                        id="createButton">
-                        <span class="state">Create Your Account</span>
-                    </button>
+                        <button mat-raised-button color="accent" type="submit" class="accountButton" id="createButton">
+                            <span class="state">Create Your Account</span>
+                        </button>
+                    </a>
+                    <a routerLink="/verify-user">
+                        <button mat-raised-button color="accent" type="submit" class="verifyButton" id="createButton">
+                            <span class="state">Verify</span>
+                        </button>
                     </a>
                 </div>
             </div>
-            <span class="psw"><a href="#">Forgot Your password?</a></span>
+            <span class="psw" ><a href="#">Forgot Your password?</a></span>
         </form>
     </div>
 </body>
