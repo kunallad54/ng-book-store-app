@@ -11,6 +11,7 @@ import { LoginComponent } from './component/login/login.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { HeaderComponent } from './component/header/header.component';
 import { UserVerficationComponent } from './component/user-verfication/user-verfication.component';
+import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserVerficationComponent } from './component/user-verfication/user-verf
     LoginComponent,
     RegistrationComponent,
     HeaderComponent,
-    UserVerficationComponent
+    UserVerficationComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
