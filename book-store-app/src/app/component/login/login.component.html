@@ -3,21 +3,22 @@
         <div class="body-content">
             <p>Welcome to Online Bookstore</p>
         </div>
-        <form class="form">
+        <form class="form" [formGroup]="userLoginGroup" (ngSubmit)="onSubmit()">
             <div class="form-head">
                 <p>Login</p>
             </div>
             <div class="row-content">
                 <mat-label class="label text" for="Email">Email</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input id="email" class="input" matInput placeholder="Enter Your Email" required>
+                    <input id="email" class="input" matInput placeholder="Enter Your Email" ngDefaultControl formControlName="emailID"
+                    type="search" autocomplete="off" required>
                 </mat-form-field>
             </div>
             <div class="row-content">
                 <mat-label class="label text" for="password">Password</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input id="password" type="password" class="input" matInput placeholder="Enter Your Password"
-                        required>
+                    ngDefaultControl formControlName="password"required>
                 </mat-form-field>
             </div>
             <div class="buttonParent">

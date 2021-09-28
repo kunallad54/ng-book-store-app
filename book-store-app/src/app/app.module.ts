@@ -12,6 +12,10 @@ import { RegistrationComponent } from './component/registration/registration.com
 import { HeaderComponent } from './component/header/header.component';
 import { UserVerficationComponent } from './component/user-verfication/user-verfication.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
+import { HomeComponent } from './component/home/home.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { BookHomeComponent } from './component/book-home/book-home.component';
+import { CartComponent } from './component/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { ForgotPasswordComponent } from './component/forgot-password/forgot-pass
     RegistrationComponent,
     HeaderComponent,
     UserVerficationComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    HomeComponent,
+    FooterComponent,
+    BookHomeComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

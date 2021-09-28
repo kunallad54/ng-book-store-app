@@ -1,0 +1,80 @@
+<body>
+    <div class="head-title">
+        <span class="title">Books</span><span class="book-count">(128 items)</span>
+    </div>
+    
+    <div class="books-content" [formGroup]="cartFormGroup" >
+        <div class="row-content" >
+            <div class="book" *ngFor="let book of bookDetails | slice:0:4">
+                <div class="image">
+                    <img src={{book.logo}} alt="book image">
+                </div>
+                <div class="book-details">
+                    <span class="book-name">{{book.name}}</span><br>
+                    <span class="author">by {{book.author}}</span><br>
+                    <span class="price">Rs.{{book.price}}</span><br>
+                </div>
+                <div class="buttonParent"id={{book.isBookAdded}} *ngIf="book.isBookAdded === false;else elseBlock">
+                    <button mat-raised-button color="accent" id={{book}} class="button addButton" (click)="addToBag(book)" >
+                        <span class="add">Add to Bag</span></button>
+                    <button mat-raised-button color="accent" class="button wishistButton" id="wishlistButton">
+                        <span class="wish">Wishlist</span>
+                    </button>
+                </div>
+                <ng-template #elseBlock >
+                    <button mat-raised-button color="accent" type="button" class="button addedButton">
+                        <span class="added">Added to Bag</span></button>
+                </ng-template>
+            </div>
+        </div>
+        <div class="row-content" >
+            <div class="book" *ngFor="let book of bookDetails | slice:4:8">
+                <div class="image">
+                    <img src={{book.logo}} alt="book image">
+                </div>
+                <div class="book-details">
+                    <span class="book-name">{{book.name}}</span><br>
+                    <span class="author">by {{book.author}}</span><br>
+                    <span class="price">Rs.{{book.price}}</span><br>
+                </div>
+                <div class="buttonParent" id={{book.isBookAdded}} *ngIf="book.isBookAdded === false;else elseBlock">
+                    <button mat-raised-button color="accent" class="button addButton" id="{{book}}" (click)="addToBag(book)" >
+                        <span class="add">Add to Bag</span></button>
+                    <button mat-raised-button color="accent" class="button wishistButton" id="wishlistButton">
+                        <span class="wish">Wishlist</span>
+                    </button>
+                </div>
+                <ng-template #elseBlock >
+                    <button mat-raised-button color="accent" type="button" class="button addedButton">
+                        <span class="added">Added to Bag</span></button>
+                </ng-template>
+            </div>
+        </div>
+        <div class="row-content" >
+            <div class="book" *ngFor="let book of bookDetails | slice:8:12">
+                <div class="image">
+                    <img src={{book.logo}} alt="book image">
+                </div>
+                <div class="book-details">
+                    <span class="book-name">{{book.name}}</span><br>
+                    <span class="author">by {{book.author}}</span><br>
+                    <span class="price">Rs.{{book.price}}</span><br>
+                </div>
+                <div class="buttonParent" id={{book.isBookAdded}} *ngIf="book.isBookAdded === false;else elseBlock">
+                    <button mat-raised-button color="accent" id={{book}} class="button addButton" (click)="addToBag(book)" >
+                        <span class="add">Add to Bag</span></button>
+                    <button mat-raised-button color="accent" class="button wishistButton" id="wishlistButton">
+                        <span class="wish">Wishlist</span>
+                    </button>
+                </div>
+                <ng-template #elseBlock >
+                    <button mat-raised-button color="accent" type="button" class="button addedButton">
+                        <span class="added">Added to Bag</span></button>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</body>
+<div class="bottom">
+    <app-footer></app-footer>
+</div>

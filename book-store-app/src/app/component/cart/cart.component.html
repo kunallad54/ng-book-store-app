@@ -1,0 +1,100 @@
+<body>
+    <div class="cart-content">
+        <div class="head-title">
+            <span class="title">MyCart({{cartCount}})</span>
+        </div>
+        <div class="row-content">
+            <mat-expansion-panel *ngFor="let carts of cartDetails" >
+                <mat-expansion-panel-header >
+                    <mat-panel-title>
+                        Cart ID : ({{carts.id}})
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="cart-detail">
+                    <div class="image">
+                        <img src={{carts.book.logo}}  alt="book logo">.
+                    </div>
+                    <div class="book-details">
+                        <span class="book-name">{{carts.book.name}}</span><br>
+                        <span class="author">by {{carts.book.author}}</span><br>
+                        <span class="price">Rs.{{carts.book.price}}</span><br>
+                    </div>
+                </div>
+                <div class="add-remove">
+                    <button class="minus" type="button" (click)="minus()">-</button>
+                    <input type="text" value="{{inputNumber}}" class="inp">
+                    <button class="plus" type="button" (click)="plus()">+</button>
+                    <span class="rem" id="{{carts.id}}" (click)="remove(carts.id)" >Remove</span>
+                </div>
+                <div class="buttonParent">
+                    <button class="place-order"><span class="added">Place Order</span></button>
+                </div>
+            </mat-expansion-panel>
+        </div>
+        <div class="row-content">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Customer Details
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <form class="form" action="#" [formGroup]="orderFormGroup" (ngSubmit)="onSubmit()" type="search" autocomplete="off">
+                    <div class="column-content">
+                        <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
+                        <mat-form-field class="left-inputs" appearance="outline">
+                            <input id="receiverName" matInput placeholder="Name" ngDefaultControl 
+                            formControlName="receiverName" type="search" autocomplete="off" required>
+                        </mat-form-field>
+                        <!-- <mat-label class="label text" for="LastName">Last Name</mat-label> -->
+                        <mat-form-field class="right-inputs" appearance="outline">
+                            <input id="receiverNumber" matInput placeholder="Phone Number" ngDefaultControl 
+                            formControlName="receiverNumber" type="search" autocomplete="off" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="column-content">
+                        <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
+                        <mat-form-field class="left-inputs" appearance="outline">
+                            <input matInput placeholder="City" ngDefaultControl formControlName="city"
+                            type="search" autocomplete="off" required>
+                        </mat-form-field>
+                        <mat-form-field class="right-inputs" appearance="outline">
+                            <input matInput placeholder="State" ngDefaultControl formControlName="state"
+                            type="search" autocomplete="off" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="column-content">
+                        <mat-form-field class="date-input" appearance="outline">
+                            <input id="address" matInput placeholder="Address" ngDefaultControl 
+                            formControlName="address"  type="search" autocomplete="off" required>
+                            <!-- <input matInput [matDatepicker]="picker" placeholder="Date of Birth *" ngDefaultControl formControlName="dateOfBirth" 
+                            required>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="column-content">
+                        <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
+                        <mat-form-field class="left-inputs" appearance="outline">
+                            <input matInput placeholder="Pincode" ngDefaultControl 
+                            formControlName="zipCode"  type="search" autocomplete="off" required>
+                        </mat-form-field>
+                        <mat-form-field class="right-inputs" appearance="outline">
+                            <input matInput placeholder="LandMark" ngDefaultControl formControlName="landMark"
+                             type="search" autocomplete="off" required>
+                        </mat-form-field>
+                    </div>
+                    <!-- <div class="buttonParent">
+                        <div class="submit-reset">
+                            <button mat-raised-button color="accent" type="submit" class="placeOrder"
+                                id="submitButton">Continue</button>
+                            <button mat-raised-button color="accent" type="reset" class="resetButton button">Reset</button>
+                        </div>
+                    </div> -->
+                    <div class="btnParent">
+                        <button type="submit" class="place-order"><span class="added">Continue</span></button>
+                    </div>
+                </form>
+            </mat-expansion-panel>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,129 @@
+mat-grid-tile {
+    background: lightblue;
+    margin-right: 10px;
+  }
+
+  .head-title{
+    margin-top: 40px;
+    margin-left: 174px;
+    text-align: left;
+    font: normal normal normal 25px/30px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+
+}
+.book-count{
+    color: #9D9D9D;
+    font-size: small;
+    padding-left: 5px;
+}
+.row-content{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    margin-left: 174px;
+    margin-right: 170px;
+    margin-bottom: 32px;
+    // width: 80%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+
+}
+
+.book-details{
+    margin-left: 25px;
+    opacity: 1;
+    .book-name{
+        color: #0A0102;
+        font: normal normal bold 14px/17px Lato;
+        // font-weight: 550;
+        text-align: left;
+    }
+    .author{
+        font: normal normal normal 10px/12px Lato;
+        color: #9D9D9D;
+    }
+    .price{
+        font: normal normal bold 12px/15px Lato;
+        color: #0A0102;
+    }
+}
+
+.buttonParent{
+    margin-left: 13px;
+    margin-bottom: 34px;
+    margin-top: 15px;
+}
+button{
+    margin-right: 13px;
+}
+.addButton{
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+    
+}
+.wishistButton{
+    border: 1px solid #9D9D9D;
+    border-radius: 2px;
+    opacity: 1;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    text-transform: uppercase;
+    // opacity: 1;
+}
+
+.addedButton{
+    margin-left: 20px;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+    margin-bottom: 35px;
+    margin-top: 15px;
+}
+.added{
+    text-align: left;
+    font: normal normal medium 11px/13px Lato;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-left: 35px;
+    margin-right: 35px;
+   
+}
+.add{
+    text-align: left;
+    font: normal normal medium 11px/13px Lato;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+.book-1,.book-2,.book-3,.book-4{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    opacity: 1;
+    margin-right: 30px;
+}
+
+.image{
+    background : #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 2px 2px 0px 0px;
+    opacity: 1;
+}
+img{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    margin-left: 68px;
+    margin-right: 60px;
+}
+
+.sort-container{
+    // padding-left: 1100px;
+    background-color: #0A0102;
+    width: 15%;
+    margin-left: 200px;
+    // margin-left:1100px;
+
+}
