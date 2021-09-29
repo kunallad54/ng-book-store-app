@@ -11,26 +11,38 @@ import { HttpService } from 'src/app/service/http.service';
 })
 export class UserVerficationComponent implements OnInit {
 
+  /**
+   * object of user and formgroup to fetch details from form
+   */
   public user = new User();
-  public userFormGroup : FormGroup;
+  public userFormGroup: FormGroup;
+
+
   constructor(
-    private fb:FormBuilder,
-    private httpService:HttpService,
-    private router:Router,
-  ) { 
+    private fb: FormBuilder,
+    private httpService: HttpService,
+    private router: Router,
+  ) {
+    /** 
+     * Added validators
+     */
     this.userFormGroup = this.fb.group({
-      emailId : new FormControl('',Validators.required),
-      otp : new FormControl('',Validators.required),
+      emailId: new FormControl('', Validators.required),
+      otp: new FormControl('', Validators.required),
     })
   }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  /**
+   * Purpose : To call an httpService method verifyUser that
+   *           makes an api call to verify user
+   */
+  onSubmit() {
     this.user = this.userFormGroup.value;
     console.log(this.user);
-    this.httpService.verifyUser(this.user).subscribe(res=>{
+    this.httpService.verifyUser(this.user).subscribe(res => {
       console.log(res);
       this.router.navigateByUrl("/login");
     })

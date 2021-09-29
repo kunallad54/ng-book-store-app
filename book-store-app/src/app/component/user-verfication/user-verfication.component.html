@@ -1,31 +1,41 @@
+<!-------------  User verification Page  ------------->
+
 <body>
     <div class="form-content">
+        <!---- Title ---->
         <div class="body-content">
             <p>Bookstore Email Verification</p>
         </div>
-        <form action="#" [formGroup] = "userFormGroup" class="form" (ngSubmit) = "onSubmit()" type = "search" autocomplete="off">
+        <!---- Form ----->
+        <form action="#" [formGroup]="userFormGroup" class="form" (ngSubmit)="onSubmit()" type="search"
+            autocomplete="off">
+            <!---- Form Title ---->
             <div class="form-head">
-                <p>Verify Your Email</p> 
-             </div>
-             <div class="row-content">
-                 <mat-label class="label text" for="Email">Email</mat-label>
-                 <mat-form-field class="example-full-width" appearance="outline">
-                     <input id="email" class="input" matInput placeholder="Enter Your Email" ngDefaultControl formControlName="emailId" required>
-                 </mat-form-field>
-             </div>
-             <div class="row-content">
-                <mat-label class="label text" for="otp">OTP</mat-label>
+                <p>Verify Your Email</p>
+            </div>
+            <!---- Email Input ---->
+            <div class="row-content">
+                <mat-label class="label text" for="Email">Email</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input id="email" class="input" matInput placeholder="Enter Your OTP" ngDefaultControl formControlName="otp" required>
+                    <input id="email" class="input" matInput placeholder="Enter Your Email" ngDefaultControl
+                        formControlName="emailId" required>
                 </mat-form-field>
             </div>
+            <!---- OTP Input ----->
+            <div class="row-content">
+                <mat-label class="label text" for="otp">OTP</mat-label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input id="email" class="input" matInput placeholder="Enter Your OTP" ngDefaultControl
+                        formControlName="otp" required>
+                </mat-form-field>
+            </div>
+            <!----- Cancel and Verify Buttons ----->
             <div class="buttonParent">
                 <a routerLink="/login">
                     <button mat-raised-button color="accent" class="button cancelButton">Cancel</button>
                 </a>
                 <div class="login">
-                    <button mat-raised-button color="accent" type="submit" class="button loginButton"
-                        id="loginButton">
+                    <button mat-raised-button color="accent" type="submit" class="button loginButton" id="loginButton">
                         <span class="state">Verify</span>
                     </button>
                 </div>

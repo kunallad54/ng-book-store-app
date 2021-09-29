@@ -5,6 +5,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
+import { OrderComponent } from './component/order/order.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { UserVerficationComponent } from './component/user-verfication/user-verfication.component';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'verify-user', component: UserVerficationComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'cart', component: CartComponent}
+  { path: 'cart', component: CartComponent},
+  { path: 'order', component: OrderComponent},
 ];
 
 @NgModule({

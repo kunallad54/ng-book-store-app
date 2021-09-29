@@ -1,21 +1,28 @@
-.head-title{
-    // background-color:aqua;
-    margin-left: 177px;
-    margin-top: 30px;
+.head-title,.customer-title{
+    margin-left: 35px;
+    margin-top: 18px;
     text-align: left;
     font: normal normal normal 19px/23px Lato;
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
 }
+.customer-title{
+    margin-bottom: 15px;
+}
 .row-content{
     margin-left: 177px;
     margin-right: 300px;
     margin-bottom: 24px;
+    margin-top: 30px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     border-radius: 1px;
     opacity: 0.8;
+    .main-cart{
+        margin-left: 36px;
+        margin-top: 40px;
+    }
     .column-content{
         margin-left: 20px;
     }
@@ -39,7 +46,6 @@
     display :flex;
     margin-right: 680px;
     margin-top: 40px;
-    // margin-bottom: 00px;
 }
 
 .book-details{
@@ -67,7 +73,8 @@
 }
 
 .add-remove{
-    margin-left: 145px;
+    margin-left: 155px;
+    margin-bottom: 20px;
     .inp{
         width: 3%;
         text-align: center;
@@ -79,38 +86,87 @@
         letter-spacing: 0px;
         color: #0A0102;
         opacity: 1;
+        background:none;
+        border:none;
+        cursor: pointer;
     }
 }
 
 .buttonParent{
     display: flex;
-    // background-color: #0A0102;
-    margin-left: 700px;
-    margin-right: 36px;
-    // padding-bottom: 40px;
+    margin-left: 780px;
+    margin-right: 1px;
+    margin-bottom: 20px;
+    .place-order{
+        background: #3371B5 0% 0% no-repeat padding-box;
+        border-radius: 2px;
+        opacity: 1;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .added{
+            text-align: left;
+            font: normal normal medium 11px/13px Lato;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            opacity: 1;
+            margin-left: 35px;
+            margin-right: 35px;
+           
+        }
+    }
+    
 }
 .btnParent{
     display: flex;
-    margin-left: 670px;
+    margin-top: 30px;
     margin-right: 36px;
-}
-.place-order{
-    margin-left: 23px;
-    margin-right: 24px;
-    background: #3371B5 0% 0% no-repeat padding-box;
-    border-radius: 2px;
-    opacity: 1;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    .added{
-        text-align: left;
-        font: normal normal medium 11px/13px Lato;
-        letter-spacing: 0px;
-        color: #FFFFFF;
-        text-transform: uppercase;
+    margin-bottom: 20px;
+    .cancel-order{
+        margin-left: 30px;
+        background:#df5b5b 0% 0% no-repeat padding-box;
+        border-radius: 2px;
         opacity: 1;
-        margin-left: 35px;
-        margin-right: 35px;
-       
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .added{
+            text-align: left;
+            font: normal normal medium 11px/13px Lato;
+            letter-spacing: 0px;
+            color: white;
+            text-transform: uppercase;
+            opacity: 1;
+            margin-left: 35px;
+            margin-right: 35px;
+           
+        }
+        
     }
+    .place-order{
+        margin-left: 650px;
+        background: #3371B5 0% 0% no-repeat padding-box;
+        border-radius: 2px;
+        opacity: 1;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .added{
+            text-align: left;
+            font: normal normal medium 11px/13px Lato;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            opacity: 1;
+            margin-left: 35px;
+            margin-right: 35px;
+           
+        }
+    }
+}
+mat-radio-group{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.radio{
+    margin-right: 180px;
 }

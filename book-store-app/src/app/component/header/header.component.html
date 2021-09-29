@@ -1,22 +1,22 @@
 <header class="header-content header">
+    <!------  BookStore Logo and Title  ------>
     <div class="logo-content">
         <img class="book-logo" src="../../../assets/images/education.png" alt="Logo Image">
         <div class="logo-text-content">
             <span class="book">Bookstore</span>
         </div>
     </div>
-    <input  *ngIf="router.url === '/home' || router.url === '/cart';" type="text" placeholder="Search" class="search-input">
-    <!-- <div class="search-content">
-        <input type="text" placeholder="Search" class="search-input">
-    </div> -->
-    
-    <span  *ngIf="router.url === '/home' || router.url === '/cart' ;" class="cart-name" matBadge="{{cartCount}}" 
-    matBadgeOverlap="false" matBadgeSize="small" >Cart</span>
+    <!-----  Search Bar  ------>
+    <input *ngIf="router.url === '/home' || router.url === '/cart'||  router.url === '/order';" type="text"
+        placeholder="Search" class="search-input">
+
+    <span *ngIf="router.url === '/home' || router.url === '/cart' ||  router.url === '/order' ;" class="cart-name"
+        matBadge="{{cartCount}}" matBadgeOverlap="false" matBadgeSize="small">Cart</span>
+    <!------ Cart Logo ------>
     <a routerLink="/cart">
-    <div *ngIf="router.url === '/home' || router.url === '/cart';" class="Cart" >
-        <img class="cart-logo"src="../../../assets/images/supermarket.svg" alt="Cart Logo">
-    </div>
+        <div *ngIf="router.url === '/home' || router.url === '/cart' ||  router.url === '/order';" class="Cart">
+            <img class="cart-logo" src="../../../assets/images/supermarket.svg" alt="Cart Logo">
+        </div>
     </a>
-    <!-- <span *ngIf="router.url === '/home' || router.url === '/cart';" class="cart-count">{{cartCount}}</span> -->
-    
+
 </header>

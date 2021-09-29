@@ -13,6 +13,8 @@ export class Order {
     address !: String;
     zipCode !: String;
     landMark !: String;
+    addressType !: String;
     user !: User;
     book !: Book;
+
 }

@@ -1,26 +1,34 @@
+<!-------------  Login Page  ------------->
+
 <body>
     <div class="form-content">
+        <!---- Title ---->
         <div class="body-content">
             <p>Welcome to Online Bookstore</p>
         </div>
+        <!----- Form ----->
         <form class="form" [formGroup]="userLoginGroup" (ngSubmit)="onSubmit()">
+            <!---- Form Title ---->
             <div class="form-head">
                 <p>Login</p>
             </div>
+            <!----- Email Input ----->
             <div class="row-content">
                 <mat-label class="label text" for="Email">Email</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input id="email" class="input" matInput placeholder="Enter Your Email" ngDefaultControl formControlName="emailID"
-                    type="search" autocomplete="off" required>
+                    <input id="email" class="input" matInput placeholder="Enter Your Email" ngDefaultControl
+                        formControlName="emailID" type="search" autocomplete="off" required>
                 </mat-form-field>
             </div>
+            <!----- Password Input ----->
             <div class="row-content">
                 <mat-label class="label text" for="password">Password</mat-label>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input id="password" type="password" class="input" matInput placeholder="Enter Your Password"
-                    ngDefaultControl formControlName="password"required>
+                        ngDefaultControl formControlName="password" required>
                 </mat-form-field>
             </div>
+            <!---- Login,Create Acccount and Verify Buttons ---->
             <div class="buttonParent">
                 <div class="login">
                     <button mat-raised-button color="accent" type="submit" class="loginButton" id="loginButton">
@@ -38,7 +46,8 @@
                     </a>
                 </div>
             </div>
-            <span class="psw" ><a routerLink="/forgot-password">Forgot Your password?</a></span>
+            <!----- Forgot Password Link ---->
+            <span class="psw"><a routerLink="/forgot-password">Forgot Your password?</a></span>
         </form>
     </div>
 </body>

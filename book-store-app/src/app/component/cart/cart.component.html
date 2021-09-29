@@ -1,100 +1,151 @@
+<!----------  Cart Page ---------->
+
 <body>
     <div class="cart-content">
-        <div class="head-title">
-            <span class="title">MyCart({{cartCount}})</span>
-        </div>
+
+        <!-------  Cart Details  ------->
         <div class="row-content">
-            <mat-expansion-panel *ngFor="let carts of cartDetails" >
-                <mat-expansion-panel-header >
-                    <mat-panel-title>
-                        Cart ID : ({{carts.id}})
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
+            <!---- Cart Title With Cart Count ---->
+            <div class="head-title">
+                <span class="title">My cart({{cartCount}})</span>
+            </div>
+            <div class="main-cart" *ngFor="let carts of cartDetails;let i = index">
+                <!---- Book Image ---->
                 <div class="cart-detail">
                     <div class="image">
-                        <img src={{carts.book.logo}}  alt="book logo">.
+                        <img src={{carts.book.logo}} alt="book logo">.
                     </div>
+                    <!---- Book Details ----->
                     <div class="book-details">
                         <span class="book-name">{{carts.book.name}}</span><br>
                         <span class="author">by {{carts.book.author}}</span><br>
                         <span class="price">Rs.{{carts.book.price}}</span><br>
                     </div>
                 </div>
+                <!---- Plus Minus Buttons and Remove Button ---->
                 <div class="add-remove">
-                    <button class="minus" type="button" (click)="minus()">-</button>
-                    <input type="text" value="{{inputNumber}}" class="inp">
-                    <button class="plus" type="button" (click)="plus()">+</button>
-                    <span class="rem" id="{{carts.id}}" (click)="remove(carts.id)" >Remove</span>
+                    <button class="minus" id="{{carts.quantity}}" type="button" (click)="minus(i)">-</button>
+                    <input type="text" value="{{carts.quantity}}" class="inp">
+                    <button class="plus" id="{{carts.quantity}}" type="button" (click)="plus(i)">+</button>
+                    <button class="rem" id="{{carts.id}}" (click)="remove(carts.id)">Remove</button>
                 </div>
-                <div class="buttonParent">
-                    <button class="place-order"><span class="added">Place Order</span></button>
-                </div>
-            </mat-expansion-panel>
+            </div>
+            <!---- Place Order Button with Toggle logic ---->
+            <div class="buttonParent" id={{!showDiv}} *ngIf="!showDiv">
+                <button class="place-order" (click)="displayCustomerDetails()"><span class="added">Place
+                        Order</span></button>
+            </div>
         </div>
+
+        <!----------- Customer Details Form Filling ---------->
         <div class="row-content">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Customer Details
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <form class="form" action="#" [formGroup]="orderFormGroup" (ngSubmit)="onSubmit()" type="search" autocomplete="off">
+            <!---- Title ---->
+            <div class="customer-title">
+                <span class="title">Customer Details</span>
+            </div>
+            <!---- Form ---->
+            <div class="form-content" id={{showDiv}} *ngIf="showDiv">
+                <form class="form" action="#" [formGroup]="orderFormGroup" (ngSubmit)="onSubmit()" type="search"
+                    autocomplete="off">
+                    <!---- Name and Phone Number Input  ---->
                     <div class="column-content">
-                        <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
                         <mat-form-field class="left-inputs" appearance="outline">
-                            <input id="receiverName" matInput placeholder="Name" ngDefaultControl 
-                            formControlName="receiverName" type="search" autocomplete="off" required>
-                        </mat-form-field>
-                        <!-- <mat-label class="label text" for="LastName">Last Name</mat-label> -->
-                        <mat-form-field class="right-inputs" appearance="outline">
-                            <input id="receiverNumber" matInput placeholder="Phone Number" ngDefaultControl 
-                            formControlName="receiverNumber" type="search" autocomplete="off" required>
-                        </mat-form-field>
-                    </div>
-                    <div class="column-content">
-                        <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
-                        <mat-form-field class="left-inputs" appearance="outline">
-                            <input matInput placeholder="City" ngDefaultControl formControlName="city"
-                            type="search" autocomplete="off" required>
+                            <input id="receiverName" matInput placeholder="Name" ngDefaultControl
+                                formControlName="receiverName" type="search" autocomplete="off" required>
                         </mat-form-field>
                         <mat-form-field class="right-inputs" appearance="outline">
-                            <input matInput placeholder="State" ngDefaultControl formControlName="state"
-                            type="search" autocomplete="off" required>
+                            <input id="receiverNumber" matInput placeholder="Phone Number" ngDefaultControl
+                                formControlName="receiverNumber" type="search" autocomplete="off" required>
                         </mat-form-field>
                     </div>
+                    <!---- City and State Input ---->
+                    <div class="column-content">
+                        <mat-form-field class="left-inputs" appearance="outline">
+                            <input matInput placeholder="City" ngDefaultControl formControlName="city" type="search"
+                                autocomplete="off" required>
+                        </mat-form-field>
+                        <mat-form-field class="right-inputs" appearance="outline">
+                            <input matInput placeholder="State" ngDefaultControl formControlName="state" type="search"
+                                autocomplete="off" required>
+                        </mat-form-field>
+                    </div>
+                    <!---- Address Input ---->
                     <div class="column-content">
                         <mat-form-field class="date-input" appearance="outline">
-                            <input id="address" matInput placeholder="Address" ngDefaultControl 
-                            formControlName="address"  type="search" autocomplete="off" required>
-                            <!-- <input matInput [matDatepicker]="picker" placeholder="Date of Birth *" ngDefaultControl formControlName="dateOfBirth" 
-                            required>
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker> -->
+                            <input id="address" matInput placeholder="Address" ngDefaultControl
+                                formControlName="address" type="search" autocomplete="off" required>
                         </mat-form-field>
                     </div>
+                    <!---- ZipCode and LandMark Input ---->
                     <div class="column-content">
-                        <!-- <mat-label class="label text" for="FirstName">FirstName</mat-label> -->
                         <mat-form-field class="left-inputs" appearance="outline">
-                            <input matInput placeholder="Pincode" ngDefaultControl 
-                            formControlName="zipCode"  type="search" autocomplete="off" required>
+                            <input matInput placeholder="Pincode" ngDefaultControl formControlName="zipCode"
+                                type="search" autocomplete="off" required>
                         </mat-form-field>
                         <mat-form-field class="right-inputs" appearance="outline">
                             <input matInput placeholder="LandMark" ngDefaultControl formControlName="landMark"
-                             type="search" autocomplete="off" required>
+                                type="search" autocomplete="off" required>
                         </mat-form-field>
                     </div>
-                    <!-- <div class="buttonParent">
-                        <div class="submit-reset">
-                            <button mat-raised-button color="accent" type="submit" class="placeOrder"
-                                id="submitButton">Continue</button>
-                            <button mat-raised-button color="accent" type="reset" class="resetButton button">Reset</button>
+                    <!---- Address Type Radio Buttons ---->
+                    <div class="column-content">
+                        <label class="label" for="addressType">Type</label>
+                        <div class="date-input">
+                            <mat-radio-group ngDefaultControl formControlName="addressType">
+                                <mat-radio-button type="radio" id="home" name="addressType" color="primary" value="Home"
+                                    required>
+                                    <label class="radio" for="home">Home</label>
+                                </mat-radio-button>
+                                <mat-radio-button type="radio" id="work" name="addressType" color="primary" value="Work"
+                                    required>
+                                    <label class="radio" for="work">Work</label>
+                                </mat-radio-button>
+                                <mat-radio-button type="radio" id="other" name="addressType" color="primary"
+                                    value="Other" required>
+                                    <label class="radio" for="other">Other</label>
+                                </mat-radio-button>
+                            </mat-radio-group>
                         </div>
-                    </div> -->
-                    <div class="btnParent">
+                    </div>
+                    <!---- Cancel and Continue Button With Toggle Logic  ---->
+                    <div class="btnParent" id={{!showOrderDiv}} *ngIf="!showOrderDiv">
+                        <button type="button" class="cancel-order" (click)="displayCustomerDetails()"><span
+                                class="added">Cancel</span></button>
                         <button type="submit" class="place-order"><span class="added">Continue</span></button>
                     </div>
                 </form>
-            </mat-expansion-panel>
+            </div>
+        </div>
+
+        <!---------- Order Summary and Place Order Button ---------->
+        <div class="row-content" id={{showOrderDiv}} *ngIf="showOrderDiv">
+            <!---- Title ---->
+            <div class="head-title">
+                <span class="title">Order Sumary</span>
+            </div>
+            <!---- Order Details ---->
+            <div class="main-cart" *ngFor="let carts of cartDetails">
+                <div class="cart-detail">
+                    <!---- Book Image ---->
+                    <div class="image">
+                        <img src={{carts.book.logo}} alt="book logo">.
+                    </div>
+                    <!---- Book Details  ---->
+                    <div class="book-details">
+                        <span class="book-name">{{carts.book.name}}</span><br>
+                        <span class="author">by {{carts.book.author}}</span><br>
+                        <span class="price">Rs.{{carts.book.price}}</span><br>
+                    </div>
+                </div>
+            </div>
+            <!---- Cancel and Checkout Button with Toggle Logic ---->
+            <div class="btnParent">
+                <button type="button" class="cancel-order" (click)="displayOrderDetails()"><span
+                        class="added">Cancel</span></button>
+                <a routerLink="/order">
+                    <button class="place-order" (click)="placeOrder()"><span class="added">Checkout</span></button>
+                </a>
+            </div>
         </div>
     </div>
 </body>
